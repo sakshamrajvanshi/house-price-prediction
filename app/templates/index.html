@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Predictor</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f2f2f2; }
+        form { background: white; padding: 20px; border-radius: 8px; max-width: 500px; margin: auto; }
+        input[type="text"] { width: 100%; padding: 8px; margin: 10px 0; }
+        button { padding: 10px 20px; background: #4CAF50; color: white; border: none; }
+        h2 { text-align: center; }
+    </style>
+</head>
+<body>
+    <h2>🏠 House Price Prediction</h2>
+    <form method="post">
+        <!-- Add 13 inputs: Assuming Boston dataset -->
+        {% for i in range(13) %}
+            <input type="text" name="feature{{ i }}" placeholder="Enter feature {{ i + 1 }}" required>
+        {% endfor %}
+        <button type="submit">Predict Price</button>
+        <h3>{{ prediction }}</h3>
+    </form>
+</body>
+</html>
